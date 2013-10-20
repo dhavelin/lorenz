@@ -1,0 +1,32 @@
+body {
+  padding-bottom: 40px;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox] + label.cb {
+  padding-left: 13px;
+  margin-right: 5px;
+  height: 17px;
+  display: inline-block;
+  background-image: url(../img/cb.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 2px solid #cbcbcb;
+  border-radius: 3px;
+  &.start {
+    border-color: red;
+  }
+}
+
+input[type=checkbox]:checked + label.cb {
+  background-position: 0 -13px;
+}
+
+.wheel-setting {
+  text-align: center;
+}

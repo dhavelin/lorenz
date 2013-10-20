@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-md-1">
+    <p>{{wheelname}}</p>
+  </div>
+  <div class="col-md-11">
+    <p class="pattern">
+      <input ng-repeat-start="cam in cams track by $index" id="{{id}}-cam-{{$index}}" type="checkbox" ng-model="cam.set"/>
+      <label class="cb" ng-class="{start: cam.startPos}" for="{{id}}-cam-{{$index}}" ng-repeat-end></label>
+    </p>
+  </div>
+</div>

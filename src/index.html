@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" ng-app="lorenz">
+  <head>
+    <meta charset="utf-8">
+    <title>Lorenz Simulator</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body ng-controller="machine">
+
+    <div class="container">
+
+      <div class="row">
+        <h1>Lorenz SZ40 Simulator</h1>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Generate Key</h2>
+        </div>
+      </div>
+
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <label for="keyLength" class="col-md-2 control-label">Length of key</label>
+          <div class="col-md-2">
+            <input type="number" class="form-control" id="keyLength" ng-model="keyLength">
+          </div>
+          <div class="col-md-2">
+            <button class="btn btn-primary" ng-click="generateKey()">Generate</button>
+          </div>
+        </div>
+      </form>
+
+      <div class="row">
+        <div class="col-md-12">
+          <textarea class="form-control" rows="6" ng-model="generatedKey"></textarea>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Chi Wheels</h2>
+        </div>
+      </div>
+
+      <pattern id="chi1" wheelname="Chi 1" cams="wheels.chi1.pattern"></pattern>
+      <pattern id="chi2" wheelname="Chi 2" cams="wheels.chi2.pattern"></pattern>
+      <pattern id="chi3" wheelname="Chi 3" cams="wheels.chi3.pattern"></pattern>
+      <pattern id="chi4" wheelname="Chi 4" cams="wheels.chi4.pattern"></pattern>
+      <pattern id="chi5" wheelname="Chi 5" cams="wheels.chi5.pattern"></pattern>
+
+      <div class="row">
+        <div class="col-md-1"><br>Start Positions</div>
+        <start id="chi1" wheelname="Chi 1" pattern="wheels.chi1.pattern" pos="wheels.chi1.start"></start>
+        <start id="chi2" wheelname="Chi 2" pattern="wheels.chi2.pattern" pos="wheels.chi2.start"></start>
+        <start id="chi3" wheelname="Chi 3" pattern="wheels.chi3.pattern" pos="wheels.chi3.start"></start>
+        <start id="chi4" wheelname="Chi 4" pattern="wheels.chi4.pattern" pos="wheels.chi4.start"></start>
+        <start id="chi5" wheelname="Chi 5" pattern="wheels.chi5.pattern" pos="wheels.chi5.start"></start>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Motor Wheels</h2>
+        </div>
+      </div>
+
+      <pattern id="motor1" wheelname="Motor 1" cams="wheels.motor1.pattern"></pattern>
+      <pattern id="motor2" wheelname="Motor 2" cams="wheels.motor2.pattern"></pattern>
+
+      <div class="row">
+        <div class="col-md-1"><br>Start Positions</div>
+        <start id="motor1" wheelname="Motor 1" pattern="wheels.motor1.pattern" pos="wheels.motor1.start"></start>
+        <start id="motor2" wheelname="Motor 2" pattern="wheels.motor2.pattern" pos="wheels.motor2.start"></start>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Psi Wheels</h2>
+        </div>
+      </div>
+
+      <pattern id="psi1" wheelname="Psi 1" cams="wheels.psi1.pattern"></pattern>
+      <pattern id="psi2" wheelname="Psi 2" cams="wheels.psi2.pattern"></pattern>
+      <pattern id="psi3" wheelname="Psi 3" cams="wheels.psi3.pattern"></pattern>
+      <pattern id="psi4" wheelname="Psi 4" cams="wheels.psi4.pattern"></pattern>
+      <pattern id="psi5" wheelname="Psi 5" cams="wheels.psi5.pattern"></pattern>
+
+      <div class="row">
+        <div class="col-md-1"><br>Start Positions</div>
+        <start id="psi1" wheelname="Psi 1" pattern="wheels.psi1.pattern" pos="wheels.psi1.start"></start>
+        <start id="psi2" wheelname="Psi 2" pattern="wheels.psi2.pattern" pos="wheels.psi2.start"></start>
+        <start id="psi3" wheelname="Psi 3" pattern="wheels.psi3.pattern" pos="wheels.psi3.start"></start>
+        <start id="psi4" wheelname="Psi 4" pattern="wheels.psi4.pattern" pos="wheels.psi4.start"></start>
+        <start id="psi5" wheelname="Psi 5" pattern="wheels.psi5.pattern" pos="wheels.psi5.start"></start>
+      </div>
+
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
